@@ -2,6 +2,11 @@
     let computerSelection;
     let playerSelection;
     let result;
+let winner; //true if Player, false if Computer;
+let playerScore = 0;
+let computerScore = 0;
+const buttonElements = document.getElementsByClassName('button');
+let rounds = 0;
 
 
 //get random computer choice
