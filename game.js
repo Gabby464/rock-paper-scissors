@@ -17,8 +17,7 @@ function getComputerChoice() {
 }
 
 
-//gameround against the computer
-
+//gameround against the computer - get the result
 function gameRound() {
     //compare both selections and chose a winner
     if (playerSelection == computerSelection) {
@@ -26,33 +25,40 @@ function gameRound() {
     } else if (playerSelection == 'Rock') {
         if (computerSelection == 'Paper') {
             result = 'You win!'
+            winner = true;
         } else if (computerSelection == 'Scissors') {
             result = 'The Computer wins!';
+            winner = false;
         }
     } else if (playerSelection == 'Paper') {
         if (computerSelection == 'Rock') {
             result = 'You win!'
+            winner = true;
         } else if (computerSelection == "Scissors") {
             result = 'The Computer wins!';
+            winner = false;
         }
     } else if (playerSelection == 'Scissors') {
         if (computerSelection == 'Paper') {
             result = 'You win!'
+            winner = true;
         } else if (computerSelection == "Rock") {
             result = 'The Computer wins!';
+            winner = false;
         }
     }
-    return result;
 }
 gameRound()
 
-function buttonSelection(){
-        //display both selections
-        let playerField = document.getElementById('player');
-        let computerField = document.getElementById('computer');
-        let resultField = document.getElementById('result');
-    
-    const buttonElements = document.getElementsByClassName('button');
+//get the player's choice and compare it with the computer's choice
+function buttonSelection() {
+    //display all sections and udate them according to the score
+    let playerField = document.getElementById('player');
+    let computerField = document.getElementById('computer');
+    let resultField = document.getElementById('result');
+    let scoreField = document.getElementById('score');
+
+//create button functionality 
     Array.from(buttonElements).forEach(function (element) {
         element.addEventListener('click', (e) => {
             computerSelection = getComputerChoice()
@@ -66,8 +72,10 @@ function buttonSelection(){
         })
     })
 }
+
 buttonSelection()
 
+//get the current score and make the scorecard 1/5
 
 function scorecard(winner) {
     rounds++
