@@ -59,7 +59,10 @@ function buttonSelection(){
             playerSelection = e.target.innerHTML;
             playerField.textContent = `Player's selection: ${playerSelection}`;
             computerField.textContent = `Computer's selection: ${computerSelection}`;
-            resultField.textContent = `Result: ${gameRound()}`;
+            resultField.textContent = `Round Result: ${result}`;
+            scorecard(winner)
+            scoreField.textContent = `Rounds played: ${rounds} -> Computer points: ${computerScore} vs  Player's points:  ${playerScore}`;
+            checkScore(computerScore, playerScore)
         })
     })
 }
