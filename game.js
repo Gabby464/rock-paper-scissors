@@ -68,3 +68,39 @@ function buttonSelection(){
 }
 buttonSelection()
 
+
+function scorecard(winner) {
+    rounds++
+    if (winner == false) {
+        computerScore ++
+    }else{
+        playerScore++
+    }
+}
+
+//show warning heading and disable buttons
+function disableButtons(){
+    let wariningMessage = document.getElementById('warining');
+    wariningMessage.style.display = "block";
+
+    Array.from(buttonElements).forEach((button) => {
+        button.disabled = true;
+    })
+}
+
+//check if one of the players has reached 5 points;
+function checkScore(computerScore, playerScore){
+    if(computerScore == 5){
+        disableButtons()        
+        setTimeout(() => {
+            alert("The Computer won! Good luck next time. Refresh to play again")
+          }, "1000")
+        
+        
+    }else if(playerScore == 5){
+        disableButtons()
+        setTimeout(() => {
+            alert("You won! Good job. Refresh to play again")
+          }, "1000")
+    }
+}
