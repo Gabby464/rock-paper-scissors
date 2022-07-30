@@ -1,7 +1,7 @@
-//declare all the important properties
-    let computerSelection;
-    let playerSelection;
-    let result;
+//declare all the important universal variables
+let computerSelection;
+let playerSelection;
+let result;
 let winner; //true if Player, false if Computer;
 let playerScore = 0;
 let computerScore = 0;
