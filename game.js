@@ -48,7 +48,7 @@ function gameRound() {
         }
     }
 }
-gameRound()
+
 
 //get the player's choice and compare it with the computer's choice
 function buttonSelection() {
@@ -58,11 +58,12 @@ function buttonSelection() {
     let resultField = document.getElementById('result');
     let scoreField = document.getElementById('score');
 
-//create button functionality 
+    //create button functionality 
     Array.from(buttonElements).forEach(function (element) {
         element.addEventListener('click', (e) => {
             computerSelection = getComputerChoice()
             playerSelection = e.target.innerHTML;
+            gameRound()
             playerField.textContent = `Player's selection: ${playerSelection}`;
             computerField.textContent = `Computer's selection: ${computerSelection}`;
             resultField.textContent = `Round Result: ${result}`;
@@ -80,14 +81,14 @@ buttonSelection()
 function scorecard(winner) {
     rounds++
     if (winner == false) {
-        computerScore ++
-    }else{
+        computerScore++
+    } else {
         playerScore++
     }
 }
 
 //show warning heading and disable buttons
-function disableButtons(){
+function disableButtons() {
     let wariningMessage = document.getElementById('warining');
     wariningMessage.style.display = "block";
 
@@ -97,18 +98,18 @@ function disableButtons(){
 }
 
 //check if one of the players has reached 5 points;
-function checkScore(computerScore, playerScore){
-    if(computerScore == 5){
-        disableButtons()        
+function checkScore(computerScore, playerScore) {
+    if (computerScore == 5) {
+        disableButtons()
         setTimeout(() => {
             alert("The Computer won! Good luck next time. Refresh to play again")
-          }, "1000")
-        
-        
-    }else if(playerScore == 5){
+        }, "1000")
+
+
+    } else if (playerScore == 5) {
         disableButtons()
         setTimeout(() => {
             alert("You won! Good job. Refresh to play again")
-          }, "1000")
+        }, "1000")
     }
 }
