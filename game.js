@@ -24,10 +24,10 @@ function gameRound() {
         result = 'Tie!'
     } else if (playerSelection == 'Rock') {
         if (computerSelection == 'Paper') {
-            result = 'You win!'
+            result = 'The Computer wins!';
             winner = true;
         } else if (computerSelection == 'Scissors') {
-            result = 'The Computer wins!';
+            result = 'You win!';
             winner = false;
         }
     } else if (playerSelection == 'Paper') {
